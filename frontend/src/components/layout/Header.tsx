@@ -1,16 +1,15 @@
-import { IoMenu } from "react-icons/io5"
-
 export default function Header() {
     return (
-        <nav className="poppins-medium w-full h-fit bg-pink-300 flex justify-center place-items-center p-4 shadow-md">
-            <div className="w-full flex flex-col place-items-center gap-1 md:flex-row md:justify-between md:gap-0 lg:w-11/12">
-                <h1 className="text-3xl p-3">Dom Brigadeiro Gourmet</h1>
-                <button className="text-2xl cursor-pointer md:hidden"><IoMenu /></button>
-                <div className="hidden md:flex self-center gap-5 ">
-                    <a href="" className="px-5 py-2 hover:bg-pink-200 rounded-lg transition">Produtos</a>
-                    <a href="" className="px-5 py-2 hover:bg-pink-200 rounded-lg transition">Sobre</a>
-                </div>
+        <header className="bg-pink-200 py-4 sticky top-0 z-50 shadow-md border-b-4 border-orange-950 border-brand-pink">
+            <div className="container mx-auto px-4 flex justify-between items-center transition-colors">
+                <a href="/" className="text-3xl font-bold italic tracking-wider text-brand-maroon flex items-center gap-2 text-orange-950">
+                    <span>Dom Brigadeiro <span className="font-light">Gourmet</span></span>
+                </a>
+                <nav className="flex gap-2 pe-3 items-center font-semibold text-brand-maroon text-orange-950">
+                    <a href="/" className="hover:text-brand-pink transition-colors hover:bg-orange-950 hover:text-pink-200 px-3 py-2 rounded-lg">Doces</a>
+                    <a href="/" className="hover:text-brand-pink transition-colors hover:bg-orange-950 hover:text-pink-200 px-3 py-2 rounded-lg">Sobre</a>
+                </nav>
             </div>
-        </nav>
+        </header>
     )
 }
