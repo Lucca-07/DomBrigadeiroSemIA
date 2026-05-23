@@ -7,7 +7,7 @@ export default function Header() {
                 </a>
                 <nav className="flex gap-2 pe-3 items-center font-semibold text-brand-maroon text-orange-950">
                     <a href="/" className="hover:text-brand-pink transition-all px-3 py-2 rounded-lg hover:scale-110">Doces</a>
-                    <a href="/" className="hover:text-brand-pink transition-all px-3 py-2 rounded-lg hover:scale-110">Sobre</a>
+                    <a href="/sobre" className="hover:text-brand-pink transition-all px-3 py-2 rounded-lg hover:scale-110">Sobre</a>
                 </nav>
             </div>
         </header>
