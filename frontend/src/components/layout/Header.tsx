@@ -6,8 +6,8 @@ export default function Header() {
                     <span>Dom Brigadeiro <span className="font-light">Gourmet</span></span>
                 </a>
                 <nav className="flex gap-2 pe-3 items-center font-semibold text-brand-maroon text-orange-950">
-                    <a href="/" className="hover:text-brand-pink transition-colors hover:bg-orange-950 hover:text-pink-200 px-3 py-2 rounded-lg">Doces</a>
-                    <a href="/" className="hover:text-brand-pink transition-colors hover:bg-orange-950 hover:text-pink-200 px-3 py-2 rounded-lg">Sobre</a>
+                    <a href="/" className="hover:text-brand-pink transition-all px-3 py-2 rounded-lg hover:scale-110">Doces</a>
+                    <a href="/" className="hover:text-brand-pink transition-all px-3 py-2 rounded-lg hover:scale-110">Sobre</a>
                 </nav>
             </div>
         </header>
