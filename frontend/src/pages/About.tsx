@@ -40,25 +40,32 @@ const ABOUT_SECTIONS = [
 
 export default function About() {
     return (
-        <div className="poppins-regular min-h-screen w-full bg-linear-0 from-pink-100 via-pink-50 to-pink-100 transition-all flex flex-col">
+        <div className="poppins-regular min-h-screen w-full bg-linear-to-br from-pink-100 via-white to-pink-50 transition-all flex flex-col">
             <Header />
-            <main className="flex-1 w-full max-w-6xl mx-auto flex flex-col gap-12 justify-center items-center py-10 px-5">
-                <h1 className="text-orange-950 text-5xl md:text-6xl poppins-bold-italic mb-4 text-center">Quem somos</h1>
+            <main className="flex-1 w-full max-w-5xl mx-auto flex flex-col gap-12 items-center py-16 px-6">
 
-                {ABOUT_SECTIONS.map((section, index) => (
-                    <div key={section.id} className="w-full flex flex-col items-center gap-12">
-                        <CardAbout
-                            imageURL={section.imageURL}
-                            title={section.title}
-                            topics={section.topics}
-                            reversed={section.reversed}
-                        />
-                        {/* Renderizar o divisor apenas se não for o último item */}
-                        {index !== ABOUT_SECTIONS.length - 1 && (
-                            <div className="w-2/3 max-w-xl border-t-2 border-orange-900/20 rounded-full"></div>
-                        )}
-                    </div>
-                ))}
+                {/* Cabeçalho da Página */}
+                <div className="text-center space-y-4 mb-4 relative w-full">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-48 bg-pink-200 rounded-full blur-3xl opacity-40 -z-10"></div>
+                    <h1 className="text-pink-800 text-5xl md:text-6xl font-bold tracking-tight">Quem somos</h1>
+                    <p className="text-lg text-pink-600/80 font-medium">Um pouco sobre a nossa paixão por doces artesanais</p>
+                </div>
+
+                <div className="w-full flex flex-col gap-16 relative z-10">
+                    {ABOUT_SECTIONS.map((section, index) => (
+                        <div key={section.id} className="w-full flex flex-col items-center gap-16">
+                            <CardAbout
+                                imageURL={section.imageURL}
+                                title={section.title}
+                                topics={section.topics}
+                                reversed={section.reversed}
+                            />
+                            {index !== ABOUT_SECTIONS.length - 1 && (
+                                <div className="w-1/3 min-w-50 border-t-2 border-pink-200/50 rounded-full"></div>
+                            )}
+                        </div>
+                    ))}
+                </div>
             </main>
             <Footer />
         </div>

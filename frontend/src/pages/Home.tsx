@@ -13,23 +13,34 @@ const PRODUCTS = [
 
 export default function Home() {
     return (
-        <div className="poppins-regular min-h-screen w-full bg-linear-0 from-pink-100 via-pink-50 to-pink-100 transition-all flex flex-col">
+        <div className="poppins-regular min-h-screen w-full bg-linear-to-br from-pink-100 via-white to-pink-50 transition-all flex flex-col">
             <Header />
-            <main className="flex-1 w-full flex flex-col justify-center items-center">
-                <section className="w-11/12 md:container h-fit min-h-52 border-2 border-orange-950 m-5 rounded-2xl bg-linear-to-bl from-pink-200 via-pink-50 to-pink-200 p-7 flex flex-col justify-center items-center gap-4 shadow-lg">
-                    <h1 className="poppins-semibold text-orange-950 text-5xl md:text-6xl text-center">Dom Brigadeiro Gourmet</h1>
-                    <p className="poppins-medium text-pink-700 md:text-xl text-center">Venha conhecer nossos deliciosos doces!</p>
-                    <button className="poppins-regular bg-pink-200 text-orange-950 shadow px-5 py-2 rounded-lg cursor-pointer transition-transform hover:scale-105 md:text-lg">
+            <main className="flex-1 w-full flex flex-col items-center pb-12">
+                <section className="w-11/12 max-w-5xl mt-8 mb-12 rounded-3xl bg-pink-200/50 p-10 md:p-16 flex flex-col justify-center items-center gap-6 shadow-xl border border-pink-200 relative overflow-hidden backdrop-blur-sm">
+                    <div className="absolute top-[-50%] left-[-10%] w-64 h-64 bg-pink-300 rounded-full blur-3xl opacity-40"></div>
+                    <div className="absolute bottom-[-50%] right-[-10%] w-64 h-64 bg-pink-400 rounded-full blur-3xl opacity-30"></div>
+
+                    <h1 className="poppins-semibold text-pink-900 text-5xl md:text-6xl text-center relative z-10 drop-shadow-sm">
+                        Dom Brigadeiro Gourmet
+                    </h1>
+                    <p className="font-medium text-pink-700 md:text-xl text-center max-w-2xl relative z-10">
+                        Os doces mais deliciosos e artesanais da cidade. Venha conhecer nosso cardápio repleto de carinho e sabor especial!
+                    </p>
+                    <button
+                        className="mt-4 bg-pink-600 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-pink-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative z-10 cursor-pointer"
+                        onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}
+                    >
                         Quero conhecer!
                     </button>
                 </section>
 
-                <div className="flex items-center gap-2 mt-4">
-                    <span className="text-red-500 text-xl"><TiStarburst /></span>
-                    <span className="text-orange-950 font-medium">Item Especial</span>
+                <div className="flex items-center gap-3 mb-8 bg-white/60 px-6 py-2 rounded-full shadow-sm border border-pink-100">
+                    <TiStarburst className="text-pink-500 text-2xl animate-pulse" />
+                    <span className="text-pink-900 font-semibold tracking-wide">Item Especial da Casa</span>
                 </div>
 
-                <div className="container w-full flex flex-col md:flex-row md:items-stretch items-center justify-center flex-wrap gap-5 p-8 relative">
+                {/* Products Grid */}
+                <div id="products" className="container max-w-6xl w-full flex flex-wrap justify-center gap-8 px-4 md:px-8">
                     {PRODUCTS.map((product) => (
                         <Product
                             key={product.id}
