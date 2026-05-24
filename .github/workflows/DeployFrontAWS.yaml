@@ -18,6 +18,7 @@ jobs:
                   node-version: "20"
 
             - name: Instalar dependencias e gerar Build
+              working-directory: ./frontend
               run: |
                   npm install
                   npm run build
@@ -31,4 +32,4 @@ jobs:
 
             - name: Sincronizar arquivos com o S3
               run: |
-                  aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET }} --delete
+                  aws s3 sync frontend/dist/ s3://${{ secrets.AWS_S3_BUCKET }} --delete
